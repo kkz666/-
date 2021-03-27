@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 QGForwardList::QGForwardList() {
-	cout << "请做个正经用户我没有写高精度和防止你们乱搞";
+	cout << "这是个无健壮性的程序";
 	head = new Node;
 	head->next = nullptr;
 	tail = new Node;

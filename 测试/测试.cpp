@@ -9,8 +9,12 @@
 #include<cstring>
 #include<stack>
 #include"qgforwardlist.h"
+#include"qglist.h"
 using namespace std;
 void fx(QGForwardList::ElemType& e) {
+    e = e + 3;
+}
+void fy(QGList::ElemType& e) {
     e = e + 3;
 }
 int main() {
