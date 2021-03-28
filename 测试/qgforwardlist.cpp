@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 QGForwardList::QGForwardList() {
-	cout << "这是个无健壮性的程序";
+	cout << "求你做个人吧";
 	head = new Node;
 	head->next = nullptr;
 	tail = new Node;
@@ -52,7 +52,7 @@ QGForwardList::~QGForwardList() {
 		p1 = p2;
 	}
 	p1 = p2 = nullptr;
-	cout << "指针释放";
+	cout <<endl<< "指针释放";
 }
 QGForwardList::ElemType & QGForwardList::front() {
 	return head->next->data;
@@ -75,6 +75,16 @@ bool QGForwardList::push_front(ElemType& e) {
 		temp->data = e;
 		temp->next = head->next->next;
 		head->next = temp;
+
+
+		Node* start = head->next;
+		cout << endl << "现在的链表" << endl;
+		while (start) {
+			cout << " " << start->data;
+			start = start->next;
+		}
+
+
 		return true;
 	}
 	else  return false;
@@ -84,6 +94,15 @@ bool QGForwardList::pop_front() {
 	if (p) {
 		head->next = p->next;
 		delete p;
+
+		Node* start = head->next;
+		cout << endl << "现在的链表" << endl;
+		while (start) {
+			cout << " " << start->data;
+			start = start->next;
+		}
+
+
 		return true;
 	}
 	return false;
@@ -97,6 +116,15 @@ bool QGForwardList::push_back(ElemType& e) {
 	N->next = nullptr;
 	T->next = N;
 	N->data = e;
+
+	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}
+
+
 	return true;
 }
 bool QGForwardList::pop_back() {
@@ -111,6 +139,16 @@ bool QGForwardList::pop_back() {
 	}
 	delete front;
 	last->next = nullptr;
+
+
+	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}
+
+
 	return true;
 }
 bool QGForwardList::insert(unsigned int index, ElemType& e) {
@@ -125,9 +163,28 @@ bool QGForwardList::insert(unsigned int index, ElemType& e) {
 		add->data = e;
 		add->next = p->next;
 		p->next = add;
+
+
+		Node* start = head->next;
+		cout << endl << "现在的链表" << endl;
+		while (start) {
+			cout << " " << start->data;
+			start = start->next;
+		}
+
+
 		return true;
 	}
-	else return true;
+	
+	else {
+		Node* start = head->next;
+		cout << endl << "现在的链表" << endl;
+		while (start) {
+			cout << " " << start->data;
+			start = start->next;
+		}
+		return true;
+	}
 }
 bool QGForwardList::erase(unsigned int index) {//11
 	int rec = 1;
@@ -142,6 +199,15 @@ bool QGForwardList::erase(unsigned int index) {//11
 	else {
 		t->next = f->next;
 		delete f;
+
+		Node* start = head->next;
+		cout << endl << "现在的链表" << endl;
+		while (start) {
+			cout << " " << start->data;
+			start = start->next;
+		}
+
+
 	    return true;
 	}
 	return false;
@@ -157,6 +223,15 @@ bool QGForwardList::clear() {
 		q->data = 0;
 		q = q->next;
 	}
+
+	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}
+
+
 	return true;
 }
 bool QGForwardList::contain(ElemType& e) {
@@ -187,6 +262,15 @@ bool QGForwardList::traverse(void (*visit)(ElemType& e)) {
 		(*visit)(p->data);
 		p = p->next;
 	}
+
+	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}
+
+
 	/*Node* start = head->next;
 	while (start) {
 		cout << " " << start->data;
@@ -194,7 +278,7 @@ bool QGForwardList::traverse(void (*visit)(ElemType& e)) {
 	}*/
 	return true;
 }
-bool QGForwardList::reverse() {
+bool QGForwardList::reverse() {//非递归
 	Node* p = head->next;
 	Node* q = p->next;
 	Node* temp = nullptr;
@@ -207,11 +291,25 @@ bool QGForwardList::reverse() {
 		}
 	head->next = p;
 	/*Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
 	while (start) {
 		cout<< " " << start->data;
 		start = start->next;
 	}*/
+
+	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}
+
+
 	return true;
+
+
+	//递归
+
 }
 bool QGForwardList::isLoop() {
 	Node* fast, * slow;
@@ -295,10 +393,19 @@ bool QGForwardList::reverseEven() {
 	if (outemp) {
 		outemp->next->next = nullptr;
 	}
+	/*Node* start = head->next;
+	while (start) {
+		cout << " " << start->data;
+		start = start->next;
+	}*/
+
 	Node* start = head->next;
+	cout << endl << "现在的链表" << endl;
 	while (start) {
 		cout << " " << start->data;
 		start = start->next;
 	}
+
+
 	return true;
 }

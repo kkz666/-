@@ -20,7 +20,7 @@ void fy(QGList::ElemType& e) {
 int main() {
     char ch;
     QGForwardList L;
-    cout << "b:返回第一个引用" << endl;
+    cout << endl<<"b:返回第一个引用" << endl;
     cout << "c:返回最后一个引用" << endl;
     cout << "d:在链表第一个元素前添加元素" << endl;
     cout << "e:删除链表第一个元素" << endl;
@@ -65,14 +65,14 @@ int main() {
         case'f':QGForwardList::ElemType b; cout << "输入要加的数"; cin >> b; L.push_back(b);
             cout << endl << "输T结束"; cin >> ch; break;
         case'g':L.pop_back(); cout << endl << "输T结束"; cin >> ch; break;
-        case 'h':unsigned int c; cout << endl << "输入index" << endl << "输入插入的位置e"; cin >> c;
+        case 'h':unsigned int c; cout << endl << "输入插入的位置c"; cin >> c;
             QGForwardList::ElemType d; cout << "输入插入的数d"<<endl; cin >> d;
             L.insert(c, d); cout << endl << "输T结束"; cin >> ch; break;
         case'i': unsigned int e; cout << "输入删除位置e" << endl;
             cin >> e; L.erase(e); cout << endl << "输0结束"; cin >> ch; break;
         case'j':L.clear(); cout << endl << "输T结束"; cin >> ch; break;
         case'k':QGForwardList::ElemType f; cout << endl << "输入你要查找的数"<<endl; cin >> f; L.contain(f); cout << endl << "输T结束"; cin >> ch; break;
-        case'l':L.size(); cout << endl << "输T结束"; cin >> ch; break;
+        case'l':cout << endl<<"链表中元素数量为"<< L.size(); cout << endl << "输T结束"; cin >> ch; break;
         case'n':cout << "不知道这个怎么玩写了个每项加3的";
             L.traverse(fx); cout << endl << "输T结束"; cin >> ch; break;
         case'm':L.reverse(); cout << endl << "输T结束"; cin >> ch; break;
